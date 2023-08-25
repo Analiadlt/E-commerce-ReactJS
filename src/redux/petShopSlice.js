@@ -28,8 +28,32 @@ export const petShopSlice = createSlice({
     resetCart: (state) => {
       state.productData = [];
     },
+    incrementQuantity: (state, action) => {
+      const item = state.productData.find(
+        (item) => item._id === action.payload._id
+      );
+      if (item) {
+        item.quantity++;
+      }
+    },
+    decrementQuantity: (state, action) => {
+      const item = state.productData.find(
+        (item) => item._id === action.payload._id
+      );
+      if (item.quantity === 1) {
+        item.quantity = 1;
+      } else {
+        item.quantity--;
+      }
+    },
   },
 });
 
-export const { addToCart } = petShopSlice.actions;
+export const {
+  addToCart,
+  deleteItem,
+  resetCart,
+  incrementQuantity,
+  decrementQuantity,
+} = petShopSlice.actions;
 export default petShopSlice.reducer;

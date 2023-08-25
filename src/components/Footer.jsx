@@ -2,6 +2,7 @@ import React from "react";
 import { logoPets, mercado_pago_logo } from "../assets/index.js";
 import { FaWhatsapp, FaInstagram, FaMailBulk } from "react-icons/fa";
 
+
 const Footer = () => {
   return (
     <div className="bg-black text-[#949494] py-20 font-titleFont">
