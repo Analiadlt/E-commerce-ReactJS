@@ -11,12 +11,14 @@ import {
   ScrollRestoration,
 } from "react-router-dom";
 import { productsData } from "./api/Api";
+import Login from "./pages/Login";
+
 const Layout = () => {
   return (
     <div>
       <Header />
       {/* ScrollRestoration, posiciona la vista al principio de la página */}
-      <ScrollRestoration/> 
+      <ScrollRestoration />
       <Outlet />
       <Footer />
     </div>
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

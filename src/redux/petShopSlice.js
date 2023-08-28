@@ -46,6 +46,14 @@ export const petShopSlice = createSlice({
         item.quantity--;
       }
     },
+    // ## User Start here
+    addUser: (state, action) => {
+      state.userInfo = action.payload;
+    },
+    removeUser: (state) => {
+      state.userInfo = null;
+    },
+    // ## User End here
   },
 });
 
@@ -55,5 +63,7 @@ export const {
   resetCart,
   incrementQuantity,
   decrementQuantity,
+  addUser,
+  removeUser,
 } = petShopSlice.actions;
 export default petShopSlice.reducer;

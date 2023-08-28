@@ -34,7 +34,7 @@ const Header = () => {
             </li>
           </ul>
 
-          <Link to="/cart">
+          <Link to="/cart" title="Cart">
             <div className="relative">
               <img className="w-6 h-8" src={bag} alt="bag image" />
               <span className="absolute w-6 top-2 left-0 text-sm flex items-center justify-center font-semibold">
@@ -42,7 +42,9 @@ const Header = () => {
               </span>
             </div>
           </Link>
-          <img className="w-8 h-8" src={cart} alt="cart image" />
+          <Link to="/login" title="Login">
+            <img className="w-8 h-8" src={cart} alt="cart image" />
+          </Link>
         </div>
       </div>
     </div>
