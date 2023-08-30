@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { githubLogo, googleLogo } from "../assets";
 import {
   GoogleAuthProvider,
@@ -7,8 +9,11 @@ import {
   signOut,
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
+import { addUser, removeUser } from "../redux/petShopSlice";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
   const handleGoogleLogin = (e) => {
@@ -16,7 +21,17 @@ const Login = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        dispatch(
+          addUser({
+            _id: user.uid,
+            name: user.displayName,
+            email: user.email,
+            image: user.photoURL,
+          })
+        );
+        setTimeout(() => {
+          navigate("/");
+        }, 1500);
       })
       .catch((error) => {
         console.log(error);
@@ -28,6 +43,7 @@ const Login = () => {
       .then(() => {
         // Sign Out succesful
         toast.success("Log Out Successfully!");
+        dispatch(removeUser());
       })
       .catch((error) => {
         console.log(error);
