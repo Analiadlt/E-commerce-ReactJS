@@ -27,8 +27,8 @@ export const Banner = () => {
   };
 
   return (
-    <div className="w-full h-auto overflow-x-hidden">
-      <div className="w-screen h-[650px] relative">
+    <div className="mt-5 w-full h-auto overflow-x-hidden">
+      <div className="w-screen relative">
         <div
           style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
           className="w-[400vw] h-[60vh] flex transition-transform duration-1000"

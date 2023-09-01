@@ -30,7 +30,7 @@ const Cart = () => {
 
   const payment = async (token) => {
     await axios.post("http://localhost:8000/pay", {
-      total: totalAmount * 100,
+      amount: totalAmount * 100,
       token: token,
     });
   };
@@ -73,7 +73,7 @@ const Cart = () => {
             <div className="w-full mt-6 flex items-center justify-center">
               {/* plataforma de pago stripe.com con credenciales de prueba por unas horas */}
               <StripeCheckout
-                stripekey="pk_test_51NkYksHo1zX0x7aqM3ji4PUNysuP1s8T36cL7eJTUYrRCOE7vdaLqiZpfVHLE3Z7nTBcHwMLE7ZGnqpvMdVEcxg500OZimNmOI"
+                stripeKey="pk_test_51NkYksHo1zX0x7aqM3ji4PUNysuP1s8T36cL7eJTUYrRCOE7vdaLqiZpfVHLE3Z7nTBcHwMLE7ZGnqpvMdVEcxg500OZimNmOI"
                 name="PetShop online Shopping"
                 amount={totalAmount * 100}
                 label="Pay to petShop"
