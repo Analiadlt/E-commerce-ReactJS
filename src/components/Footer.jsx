@@ -5,9 +5,12 @@ import { FaWhatsapp, FaInstagram, FaMailBulk } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-black text-[#949494] py-5 font-titleFont">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-2">
-        <div className="ml-5 flex flex-col">
+    <div className="bg-black text-[#949494] font-titleFont py-5 ">
+     {/* <div className="bg-black text-[#949494] py-5 font-titleFont  "> */}
+      {/* <div className="max-w-screen-xl mx-auto grid grid-cols-2"> */}
+      <div className="max-w-screen-xl mx-auto grid grid-cols-4">
+        {/* <div className="ml-5 flex flex-col"> */}
+        <div className="ml-5 flex flex-col gap-7">
           <img className="w-20" src={logoPets} alt="logoPets" />
           <img
             className="w-20"
