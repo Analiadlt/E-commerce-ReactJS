@@ -12,7 +12,6 @@ const Home = () => {
 
   return (
     <div>
-      {/* <Banner /> */}
       <Banner/>
       <ProductsAll products={products} />
     </div>
